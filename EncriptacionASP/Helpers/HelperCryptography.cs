@@ -8,7 +8,7 @@ namespace MvcCoreUtilidades.Helpers
         public static string GenerateSalt()
         {
             Random random = new Random();
-            
+            string salt = "";
             for(int i = 1; i<= 50; i++)
             {
                 int aleat = random.Next(0, 255);
