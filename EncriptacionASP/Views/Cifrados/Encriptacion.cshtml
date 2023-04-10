@@ -1,45 +1,23 @@
-﻿@*<h1 style="color:fuchsia">Cifrado Eficiente</h1>
-
-<form method="post">
-    <label>Contenido a cifrar</label>
-    <input type="text" value="@ViewData["CONTENIDO"]" name="contenido" class="form-control" />
-    <label>Resultado: </label>
-    <textarea name="resultado" rows="5"
-              class="form-control">@ViewData["TEXTOCIFRADO"]</textarea>
-    <button class="btn btn-success" name="accion" value="cifrar">
-        Cifrar contenido
-    </button>
-    <button class="btn btn-warning" name="accion" value="comparar">
-        Comparar contenido
-    </button>
-</form>
-@Html.Raw(ViewData["MENSAJE"])                                                    
-*@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
 
-    <!-- Estilos -->
+
     <link rel="stylesheet" href="css/estilos.css">
 
     <title>Formulario Login y Registro de Usuarios</title>
 </head>
 <body>
 
-    <!-- Formularios -->
     <div class="contenedor-formularios">
-        <!-- Links de los formularios -->
-       
 
-        <!-- Contenido de los Formularios -->
         <div class="contenido-tab">
-            <!-- Iniciar Sesion -->
+        
             <div >
                 <h1>Encriptacion ASP</h1>
                 <form action="#" method="post">
@@ -64,7 +42,6 @@
                 @Html.Raw(ViewData["MENSAJE"])
             </div>
 
-            <!-- Registrarse -->
             <div >
                 
                 
