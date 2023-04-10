@@ -2,7 +2,7 @@
 
 <form method="post">
     <label>Contenido a cifrar</label>
-    <input type="text" name="contenido" class="form-control" />
+    <input type="text" value="@ViewData["CONTENIDO"]" name="contenido" class="form-control" />
     <label>Resultado: </label>
     <textarea name="resultado" rows="5"
               class="form-control">@ViewData["TEXTOCIFRADO"]</textarea>

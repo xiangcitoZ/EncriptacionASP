@@ -5,13 +5,13 @@ namespace MvcCoreUtilidades.Controllers
 {
     public class CifradosController : Controller
 {   
-    public IActionResult CifradoEficiente()
+    public IActionResult Encriptacion()
         {
             return View();
         }
 
     [HttpPost]
-    public IActionResult CifradoEficiente
+    public IActionResult Encriptacion
             (string contenido, string resultado, string accion)
         {
             if(accion.ToLower() == "cifrar")
@@ -20,6 +20,7 @@ namespace MvcCoreUtilidades.Controllers
                 string response =
                     HelperCryptography.EncriptarContenido(contenido, false);
                 ViewData["TEXTOCIFRADO"] = response;
+                ViewData["CONTENIDO"] = contenido;
 
             }else if (accion.ToLower() == "comparar")
             {
@@ -41,36 +42,7 @@ namespace MvcCoreUtilidades.Controllers
         }
     
 
-    public IActionResult CifradoBasico()
-    {
-        return View();
-    }
- 
-    [HttpPost]
-    public IActionResult CifradoBasico
-        (string contenido, string resultado, string accion)
-    {
-        //CIFRAMOS EL CONTENIDO CON EL HELPER
-        string response =
-            HelperCryptography.EncriptarTextoBasico(contenido);
-        if (accion.ToLower() == "cifrar")
-        {
-            ViewData["TEXTOCIFRADO"] = response;
-        }else if (accion.ToLower() == "comparar")
-        {
-            //COMPARAMOS EL CONTENIDO CIFRADO CON EL RESULTADO
-            //DE LA CAJA
-            if (response != resultado)
-            {
-                ViewData["MENSAJE"] = "Los valores no coinciden";
-            }
-            else
-            {
-                ViewData["MENSAJE"] = "Contenidos iguales!!!";
-            }
-        }
-        return View();
-    }
+    
 }
 
 }
