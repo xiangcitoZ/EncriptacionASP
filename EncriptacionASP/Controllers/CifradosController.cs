@@ -28,12 +28,12 @@ namespace MvcCoreUtilidades.Controllers
                     HelperCryptography.EncriptarContenido(contenido, true);
                 if(response != resultado)
                 {
-                    ViewData["MENSAJE"] = "<h1 style ='color:red'>No son iguales </h1> ";
+                    ViewData["MENSAJE"] = "<h1 style ='color:white'>NO SON IGUALES </h1> ";
 
                 }
                 else
                 {
-                    ViewData["MENSAJE"] = "<h1 style ='color:blue'>Son iguales </h1> ";
+                    ViewData["MENSAJE"] = "<h1 style ='color:white'>SON IGUALES </h1> ";
                 }
             }
 

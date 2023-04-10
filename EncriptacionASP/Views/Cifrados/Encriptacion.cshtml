@@ -1,4 +1,4 @@
-﻿<h1 style="color:fuchsia">Cifrado Eficiente</h1>
+﻿@*<h1 style="color:fuchsia">Cifrado Eficiente</h1>
 
 <form method="post">
     <label>Contenido a cifrar</label>
@@ -14,3 +14,66 @@
     </button>
 </form>
 @Html.Raw(ViewData["MENSAJE"])                                                    
+*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>Formulario Login y Registro de Usuarios</title>
+</head>
+<body>
+
+    <!-- Formularios -->
+    <div class="contenedor-formularios">
+        <!-- Links de los formularios -->
+       
+
+        <!-- Contenido de los Formularios -->
+        <div class="contenido-tab">
+            <!-- Iniciar Sesion -->
+            <div >
+                <h1>Encriptacion ASP</h1>
+                <form action="#" method="post">
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario 
+                        </label>
+                        <input type="text" value="@ViewData["CONTENIDO"]" name="contenido" class="form-control" />
+                    </div>
+
+                    <div class="contenedor-input">
+                        <textarea name="resultado" rows="5"
+                                  class="form-control">@ViewData["TEXTOCIFRADO"]</textarea>
+                    </div>
+                    
+                    <ul class="contenedor-tabs">
+                        
+                        <button name="accion" value="cifrar">Cifrar contenido</button>
+                        <button name="accion" value="comparar">Comparar contenido</button>
+                    </ul>
+                </form>
+                @Html.Raw(ViewData["MENSAJE"])
+            </div>
+
+            <!-- Registrarse -->
+            <div >
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
