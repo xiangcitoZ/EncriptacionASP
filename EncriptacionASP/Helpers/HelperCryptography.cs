@@ -24,26 +24,29 @@ namespace MvcCoreUtilidades.Helpers
         {
             if(comparar == false)
             {
-                //GENERAMOS NUESTRO SALT
+                
                 Salt = GenerateSalt();
             }
-            //EL SALT LO INCLUIREMOS DONDE DESEEMOS
-            //INCLUIMOS EL SALT AL FINAL DEL PASSWORD A CIFRAR
+            
             string contenidosalt = contenido + Salt;
-            SHA256Managed sHA256 = new SHA256Managed();
+            
 
             byte[] salida;
             UnicodeEncoding encoding = new UnicodeEncoding();
-            //CONVERTIMOS A BYTES EL CONTENIDO DEL SALT
-            salida = encoding.GetBytes(contenidosalt);  
-            //DEBEMOS REALIZAR EL CIFRADO SOBRE CIFRADO N VECES
-            for(int i = 1; i<= 55; i++) 
+            
+            salida = encoding.GetBytes(contenidosalt);
+
+
+
+            SHA256Managed sHA256 = new SHA256Managed();
+
+            for (int i = 1; i<= 55; i++) 
             {
-                //REALIZAMOS EL CIFRADO
+                
                 salida = sHA256.ComputeHash(salida);
                 
             }
-            //LIMPIAMOS EL SHA256
+            
             sHA256.Clear();
             string resultado = encoding.GetString(salida);
             return resultado;
